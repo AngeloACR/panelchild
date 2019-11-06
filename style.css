@@ -1,0 +1,19 @@
+/*
+ Theme Name:     Flatsome Child
+ Theme URI:      
+ Description:    Flatsome Child Theme
+ Author:         Angelo Crincoli
+ Template:       Flatsome
+ Version:        1.0.0
+*/
+
+.composite_form .composite_pagination ul li {
+	display: inline-flex !important;
+}
+.full_width .columns-4 .summary_elements li.summary_element {
+    width: 100% !important;
+}
+
+.composite_summary .summary_element_image img.summary_element_content {
+    max-height: 200px !important;
+}
