@@ -7,51 +7,187 @@ preg_match_all('~>\K[^<>]*(?=<)~', $product->get_categories(), $pCats);
 
 $i=0;
 
-if($pCats[0][0] == "Good Packages"){
-    $solarSKU = "JAP60S-01-275-SC";
-    $flatSSKU = array (
-        "NLZ-fff-ez-6",
-        "NLZ-fff-ez-7",
-        "NLZ-fff-ez-8",
-        "NLZ-fff-ez-9",
-        "NLZ-fff-ez-10",
-        "NLZ-fff-ez-11",
-        "NLZ-fff-ez-12",
-        "NLZ-fff-ez-13",
-        "NLZ-fff-ez-14",
-        "NLZ-fff-ez-15",
-        "NLZ-fff-ez-16",
-        "NLZ-fff-ez-17",
-        "NLZ-fff-ez-18",
-        "NLZ-fff-ez-19",
-        "NLZ-fff-ez-20",
-        "NLZ-fff-ez-21",
-        "NLZ-fff-ez-22",
-        "NLZ-fff-ez-23",
-        "NLZ-fff-ez-24",
-        "NLZ-fff-ez-25"
-  
+if($pCats[0][0] == "Goed Pakket"){
+    $panelMin = 18;
+    $solarMonoSKU = array(
+        "NLZ-Gsf-6",
+        "NLZ-Gsf-7",
+        "NLZ-Gsf-8",
+        "NLZ-Gsf-9",
+        "NLZ-Gsf-10",
+        "NLZ-Gsf-11",
+        "NLZ-Gsf-12",
+        "NLZ-Gsf-13",
+        "NLZ-Gsf-14",
+        "NLZ-Gsf-15",
+        "NLZ-Gsf-16",
+        "NLZ-Gsf-17",
+        "NLZ-Gsf-18",
+        "NLZ-Gsf-19",
+        "NLZ-Gsf-20",
+        "NLZ-Gsf-21"
     );
-    $flatBSKU = array (
-        "NLZ-fff-owzw-6",
-        "NLZ-fff-owzw-8",
-        "NLZ-fff-owzw-10",
-        "NLZ-fff-owzw-12",
-        "NLZ-fff-owzw-14",
-        "NLZ-fff-owzw-16",
-        "NLZ-fff-owzw-18",
-        "NLZ-fff-owzw-20",
-        "NLZ-fff-owzw-22",
-        "NLZ-fff-owzw-24"
-       
+    $solarTriSKU = array(
+        "NLZ-Gdf-18",
+        "NLZ-Gdf-19",
+        "NLZ-Gdf-20",
+        "NLZ-Gdf-21",
+        "NLZ-Gdf-22",
+        "NLZ-Gdf-23",
+        "NLZ-Gdf-24",
+        "NLZ-Gdf-25",
     );
-    } else {
-        if($pCats[0][0] == "Better Packages"){
-            $solarSKU = "JAM60S-07-SE-305-PR-AB"; 
-        } else{
-            $solarSKU = "LG330N1K-V5"; 
-        }
-        $flatSSKU = array (
+
+    $fullTriSKU = array (
+        "NLZ-inst-18-3",
+        "NLZ-inst-19-3",
+        "NLZ-inst-20-3",
+        "NLZ-inst-21-3",
+        "NLZ-inst-22-3",
+        "NLZ-inst-23-3",
+        "NLZ-inst-24-3",
+        "NLZ-inst-25-3"
+    );
+} else if($pCats[0][0] == "Beter Pakket"){
+    $panelMin = 19;
+    $solarMonoSKU = array(
+        "NLZ-Bsf-6",
+        "NLZ-Bsf-7",
+        "NLZ-Bsf-8",
+        "NLZ-Bsf-9",
+        "NLZ-Bsf-10",
+        "NLZ-Bsf-11",
+        "NLZ-Bsf-12",
+        "NLZ-Bsf-13",
+        "NLZ-Bsf-14",
+        "NLZ-Bsf-15",
+        "NLZ-Bsf-16",
+        "NLZ-Bsf-17",
+        "NLZ-Bsf-18",
+        "NLZ-Bsf-19",
+        "NLZ-Bsf-20",
+        "NLZ-Bsf-21",
+        "NLZ-Bsf-22",
+        "NLZ-Bsf-23",
+        "NLZ-Bsf-24",
+        "NLZ-Bsf-25"
+    );
+    $solarTriSKU = array(
+        "NLZ-Bdf-19",
+        "NLZ-Bdf-20",
+        "NLZ-Bdf-21",
+        "NLZ-Bdf-22",
+        "NLZ-Bdf-23",
+        "NLZ-Bdf-24",
+        "NLZ-Bdf-25"
+    );
+
+    $fullTriSKU = array (
+       "NLZ-inst-19-3",
+        "NLZ-inst-20-3",
+        "NLZ-inst-21-3",
+        "NLZ-inst-22-3",
+        "NLZ-inst-23-3",
+        "NLZ-inst-24-3",
+        "NLZ-inst-25-3"
+    );
+
+} else if($pCats[0][0] == "Beste Pakket"){
+    $panelMin = 12;
+    $solarMonoSKU = array(
+        "NLZ-BTsf-6",
+        "NLZ-BTsf-7",
+        "NLZ-BTsf-8",
+        "NLZ-BTsf-9",
+        "NLZ-BTsf-10",
+        "NLZ-BTsf-11",
+        "NLZ-BTsf-12",
+        "NLZ-BTsf-13",
+        "NLZ-BTsf-14",
+        "NLZ-BTsf-15",
+        "NLZ-BTsf-16",
+        "NLZ-BTsf-17",
+        "NLZ-BTsf-18",
+        "NLZ-BTsf-19",
+        "NLZ-BTsf-20",
+        "NLZ-BTsf-21",
+        "NLZ-BTsf-22",
+        "NLZ-BTsf-23",
+        "NLZ-BTsf-24",
+        "NLZ-BTsf-25"
+    );
+    $solarTriSKU = array(
+        "NLZ-BTdf-12",
+        "NLZ-BTdf-13",
+        "NLZ-BTdf-14",
+        "NLZ-BTdf-15",
+        "NLZ-BTdf-16",
+        "NLZ-BTdf-17",
+        "NLZ-BTdf-18",
+        "NLZ-BTdf-19",
+        "NLZ-BTdf-20",
+        "NLZ-BTdf-21",
+        "NLZ-BTdf-22",
+        "NLZ-BTdf-23",
+        "NLZ-BTdf-24",
+        "NLZ-BTdf-25"
+    );
+
+    $fullTriSKU = array (
+        "NLZ-inst-12",
+        "NLZ-inst-13",
+        "NLZ-inst-14",
+        "NLZ-inst-15",
+        "NLZ-inst-16",
+        "NLZ-inst-17",
+        "NLZ-inst-18-3",
+        "NLZ-inst-19-3",
+        "NLZ-inst-20-3",
+        "NLZ-inst-21-3",
+        "NLZ-inst-22-3",
+        "NLZ-inst-23-3",
+        "NLZ-inst-24-3",
+        "NLZ-inst-25-3"
+    );
+
+}
+$flatSSSKU = array (
+    "NLZ-fff-ez-6",
+    "NLZ-fff-ez-7",
+    "NLZ-fff-ez-8",
+    "NLZ-fff-ez-9",
+    "NLZ-fff-ez-10",
+    "NLZ-fff-ez-11",
+    "NLZ-fff-ez-12",
+    "NLZ-fff-ez-13",
+    "NLZ-fff-ez-14",
+    "NLZ-fff-ez-15",
+    "NLZ-fff-ez-16",
+    "NLZ-fff-ez-17",
+    "NLZ-fff-ez-18",
+    "NLZ-fff-ez-19",
+    "NLZ-fff-ez-20",
+    "NLZ-fff-ez-21",
+    "NLZ-fff-ez-22",
+    "NLZ-fff-ez-23",
+    "NLZ-fff-ez-24",
+    "NLZ-fff-ez-25"
+
+);
+$flatEWBKU = array (
+    "NLZ-fff-owzw-6",
+    "NLZ-fff-owzw-8",
+    "NLZ-fff-owzw-10",
+    "NLZ-fff-owzw-12",
+    "NLZ-fff-owzw-14",
+    "NLZ-fff-owzw-16",
+    "NLZ-fff-owzw-18",
+    "NLZ-fff-owzw-20",
+    "NLZ-fff-owzw-22",
+    "NLZ-fff-owzw-24"
+   
+);
+$flatSBSKU = array (
             "NLZ-fff-ezw-6",
             "NLZ-fff-ezw-7",
             "NLZ-fff-ezw-8",
@@ -74,22 +210,19 @@ if($pCats[0][0] == "Good Packages"){
             "NLZ-fff-ezw-25"
 
         );
-        $flatBSKU = array (
-            "NLZ-fff-owz-6",
-            "NLZ-fff-owz-8",
-            "NLZ-fff-owz-10",
-            "NLZ-fff-owz-12",
-            "NLZ-fff-owz-14",
-            "NLZ-fff-owz-16",
-            "NLZ-fff-owz-18",
-            "NLZ-fff-owz-20",
-            "NLZ-fff-owz-22",
-            "NLZ-fff-owz-24"
+    $flatEWSSKU = array (
+        "NLZ-fff-owz-6",
+        "NLZ-fff-owz-8",
+        "NLZ-fff-owz-10",
+        "NLZ-fff-owz-12",
+        "NLZ-fff-owz-14",
+        "NLZ-fff-owz-16",
+        "NLZ-fff-owz-18",
+        "NLZ-fff-owz-20",
+        "NLZ-fff-owz-22",
+        "NLZ-fff-owz-24"
 
-        );
-    }
-
-    $clampSKU = "EN-CT-100-SPLIT"; 
+    );
 
     $inclinedSKU = array (
         "NLZ-evo-6",
@@ -145,24 +278,6 @@ if($pCats[0][0] == "Good Packages"){
 
     $electricianSKU= "NLZ-elkt-10";
 
-    $optimizerSKU = "P300-MC4";
-
-    $converterMonoSKU = array(
-        "SOL-1.5-MINI-4G-DC",
-        "SOL-2.0-MINI-4G-DC",
-        "SOL-2.5-MINI-4G-DC",
-        "SOL-3.0-MINI-4G-DC",
-        "SOL-3.6-MINI-4G-DC",
-        "SOL-4.0-4G-DT-DC",
-        "SOL-4.6-4G-DT-DC",
-        "SOL-5.0-4G-DT-DC"       
-    );
-
-    $converterTriSKU = array(
-        "SOL-5.0-3PH-4G-DC",
-        "SOL-6.0-3PH-4G-DC"
-    );
-
     $fullMonoSKU = array (
         "NLZ-inst-6",
         "NLZ-inst-7",
@@ -186,30 +301,19 @@ if($pCats[0][0] == "Good Packages"){
         "NLZ-inst-25"
     );
 
-    $fullTriSKU = array (
-        "NLZ-inst-18-3",
-        "NLZ-inst-19-3",
-        "NLZ-inst-20-3",
-        "NLZ-inst-21-3",
-        "NLZ-inst-22-3",
-        "NLZ-inst-23-3",
-        "NLZ-inst-24-3",
-        "NLZ-inst-25-3"
-    );
-
 ?>
 
 <div class="cartBox">
 <p id="priceBox"></p>
 
-<a id="addButt" class="button primary is-outline" style=border-radius:99px;>Add to Cart</a>
+<a id="addButt" class="button primary is-outline" style=border-radius:99px;>Ik ga bestellen</a>
 </div>
 
 <style>
 .cartBox{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 </style>
@@ -217,101 +321,122 @@ if($pCats[0][0] == "Good Packages"){
     <?php
         $nonce = wp_create_nonce("myCustomCartNonce");
     ?>
+    var nonce = "<?php echo $nonce; ?>"
     var addButt = document.getElementById("addButt");
-    var data = calcPrice();
-    var link = '/dev/wp-admin/admin-ajax.php?action=myCustomCart&pQty='+data['pQty']+'&ids='+data['ids']+'&nonce='+'<?php echo $nonce; ?>';
-    addButt.setAttribute( 'data-nonce', "<?php echo $nonce; ?>" );
-       addButt.href = link;
-	document.addEventListener("price", function () {
+    addButt.setAttribute( 'data-nonce', nonce );
+    document.addEventListener("price", function () {
         data = calcPrice();
-        link = '/dev/wp-admin/admin-ajax.php?action=myCustomCart&pQty='+data['pQty']+'&ids='+data['ids']+'&nonce='+'<?php echo $nonce; ?>';
-        addButt.setAttribute( 'data-nonce', "<?php echo $nonce; ?>" );
-        addButt.href = link;
+        if(data){
+            <?php 
+            $home = get_home_url(); 
+            $src = $home."/wp-admin/admin-ajax.php?action=myCustomCart";
+            ?>
+                        
+            //var link = '/dev/wp-admin/admin-ajax.php?action=myCustomCart&pQty='+data['pQty']+'&ids='+data['ids']+'&nonce='+nonce;
+            var link = '<?php echo $src ?>&pQty='+data['pQty']+'&ids='+data['ids']+'&nonce='+nonce;            
+            addButt.href = link;
+        }
     });
-    /*addButt.addEventListener("click", function() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "/dev/wp-content/themes/flatsome-child/toCart.php?"+ data, true);
-        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xmlhttp.send();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState === 4 && this.status === 200) {
-                console.log(this.responseText);
-            } else {
-                console.log('waiting');
-            };
-        }      
-    });*/
+    addButt.addEventListener("click", function () {
+        localStorage.setItem('panelQty', '6');
+            localStorage.removeItem('install');
+            localStorage.removeItem('roof');
+            localStorage.removeItem('roofDir');
+            localStorage.removeItem('roofColor');
+			localStorage.removeItem('energy');	
+    });
+
 
 function calcPrice(){
     var pTag = <?php echo "\"".$pCats[0][0]."\""; ?>;
     var priceBox = document.getElementById('priceBox');
     var pQty = localStorage.getItem('panelQty');
     var roof = localStorage.getItem('roof');
+    var roofDir = localStorage.getItem('roofDir');
+    var roofColor = localStorage.getItem('roofColor');
     var energy = localStorage.getItem('energy');
     var install = localStorage.getItem('install');
-    var solarIds = [];
-    var flatSIds = [];
-    var flatBIds = [];
+    var panelMin = <?php echo $panelMin;?>;
+
+
+    var solarMonoIds = [];
+    var solarTriIds = [];
+    var flatSSIds = [];
+    var flatEWSIds = [];
+    var flatSBIds = [];
+    var flatEWBIds = [];
     var fullMonoIds = [];
     var fullTriIds = [];
     var inclinedIds = [];
-    var optimizerIds = [];
     var ownIds = [];
-    var clampIds = [];
     var electricianIds = [];
-    var converterMonoIds = [];
-    var converterTriIds = [];
-    var solarPrices = [];
-    var flatSPrices = [];
-    var flatBPrices = [];
+
+    var solarMonoPrices = [];
+    var solarTriPrices = [];
+    var flatSSPrices = [];
+    var flatSBPrices = [];
+    var flatEWSPrices = [];
+    var flatEWBPrices = [];
     var fullMonoPrices = [];
     var fullTriPrices = [];
     var inclinedPrices = [];
-    var optimizerPrices = [];
     var ownPrices = [];
-    var clampPrices = [];
     var electricianPrices = [];
-    var converterMonoPrices = [];
-    var converterTriPrices = [];
-    <?php    
+
+<?php    
  
-    $id = wc_get_product_id_by_sku($solarSKU);
-    $prod = wc_get_product( $id );
-    ?> 
-    var solarId = <?php echo $id;?>;
-    var solarPrice =parseFloat(<?php echo $prod->get_price();?>); 
-    <?php
-    
-    foreach ($flatSSKU as $sku ) { 
+    foreach ($solarMonoSKU as $sku ) { 
         $id = wc_get_product_id_by_sku($sku);
         $prod = wc_get_product( $id );
     ?> 
-    flatSIds.push(<?php echo $id;?>) 
-    flatSPrices.push(parseFloat(<?php echo $prod->get_price();?>));
+    solarMonoIds.push(<?php echo $id;?>) 
+    solarMonoPrices.push(parseFloat(<?php echo $prod->get_price();?>));
+    <?php
+    } 
+
+    foreach ($solarTriSKU as $sku ) { 
+        $id = wc_get_product_id_by_sku($sku);
+        $prod = wc_get_product( $id );
+    ?> 
+    solarTriIds.push(<?php echo $id;?>) 
+    solarTriPrices.push(parseFloat(<?php echo $prod->get_price();?>));
+    <?php
+    } 
+
+    foreach ($flatSSSKU as $sku ) { 
+        $id = wc_get_product_id_by_sku($sku);
+        $prod = wc_get_product( $id );
+    ?> 
+    flatSSIds.push(<?php echo $id;?>) 
+    flatSSPrices.push(parseFloat(<?php echo $prod->get_price();?>));
     <?php
     }
-    foreach ($flatBSKU as $sku ) { 
+    foreach ($flatEWSSKU as $sku ) { 
         $id = wc_get_product_id_by_sku($sku);
         $prod = wc_get_product( $id );
         ?>
-        flatBIds.push(<?php echo $id;?>);
-        flatBPrices.push(parseFloat(<?php echo $prod->get_price();?>)); 
+        flatEWSIds.push(<?php echo $id;?>);
+        flatEWSPrices.push(parseFloat(<?php echo $prod->get_price();?>)); 
         <?php
     }
 
-        $id = wc_get_product_id_by_sku($optimizerSKU);
+    foreach ($flatSBSKU as $sku ) { 
+        $id = wc_get_product_id_by_sku($sku);
         $prod = wc_get_product( $id );
-        ?> 
-        var optimizerId = <?php echo $id;?>; 
-        var optimizerPrice = parseFloat(<?php echo $prod->get_price();?>); 
-        <?php
-    
-        $id = wc_get_product_id_by_sku($clampSKU);
+    ?> 
+    flatSBIds.push(<?php echo $id;?>) 
+    flatSBPrices.push(parseFloat(<?php echo $prod->get_price();?>));
+    <?php
+    }
+    foreach ($flatEWBKU as $sku ) { 
+        $id = wc_get_product_id_by_sku($sku);
         $prod = wc_get_product( $id );
-        ?> 
-        var clampId = <?php echo $id;?>; 
-        var clampPrice = parseFloat(<?php echo $prod->get_price();?>); 
+        ?>
+        flatEWBIds.push(<?php echo $id;?>);
+        flatEWBPrices.push(parseFloat(<?php echo $prod->get_price();?>)); 
         <?php
+    }
+
     
    foreach ($inclinedSKU as $sku ) { 
         $id = wc_get_product_id_by_sku($sku);
@@ -337,22 +462,6 @@ function calcPrice(){
         var electricianPrice = parseFloat(<?php echo $prod->get_price();?>); 
         <?php
 
-foreach ($converterMonoSKU as $sku ) { 
-        $id = wc_get_product_id_by_sku($sku);
-        $prod = wc_get_product( $id );
-        ?> 
-        converterMonoIds.push(<?php echo $id;?>); 
-        converterMonoPrices.push(parseFloat(<?php echo $prod->get_price();?>)); 
-        <?php
-    }
-    foreach ($converterTriSKU as $sku ) { 
-        $id = wc_get_product_id_by_sku($sku);
-        $prod = wc_get_product( $id );
-        ?> 
-        converterTriIds.push(<?php echo $id;?>); 
-        converterTriPrices.push(parseFloat(<?php echo $prod->get_price();?>)); 
-        <?php
-    }
     foreach ($fullMonoSKU as $sku ) { 
         $id = wc_get_product_id_by_sku($sku);
         $prod = wc_get_product( $id );
@@ -371,105 +480,134 @@ foreach ($converterMonoSKU as $sku ) {
     }
     ?>
 
-    if(!pQty){
-        pQty = 6;
-    }
-
-    if(!roof){
-        roof = "Flat";
-    }
-
-    if(!energy){
-        energy = "Mono";
-    }
-
-    if(!install){
-        install = "Full Installed";
-    }
-
-
-    var optQty = pQty;
-
-    solarPrice = pQty*parseFloat(solarPrice);
-    optimizerPrice = pQty*parseFloat(optimizerPrice);
-
-    var clampPrice = parseFloat(clampPrice);
-    var converterPrice;
-    var converterId;
     if(energy == "Mono"){
-        if(pQty == 6){
-            converterPrice = parseFloat(converterMonoPrices[0]);
-            converterId = converterMonoIds[0];
-        } else if (pQty == 7 || pQty == 8){
-            converterPrice = parseFloat(converterMonoPrices[1]);
-            converterId = converterMonoIds[1];
-        } else if (pQty == 9 || pQty == 10){
-            converterPrice = parseFloat(converterMonoPrices[2]);
-            converterId = converterMonoIds[2];
-        } else if (pQty == 11 || pQty == 12){
-            converterPrice = parseFloat(converterMonoPrices[3]);
-            converterId = converterMonoIds[3];
-        } else if (pQty == 13 || pQty == 14){
-            converterPrice = parseFloat(converterMonoPrices[4]);
-            converterId = converterMonoIds[4];
-        } else if (pQty == 15 || pQty == 16){
-            converterPrice = parseFloat(converterMonoPrices[5]);
-            converterId = converterMonoIds[5];
-        } else if (pQty == 17 || pQty == 18 || pQty == 19){
-            converterPrice = parseFloat(converterMonoPrices[6]);
-            converterId = converterMonoIds[6];
+       solarPrice = parseFloat(solarMonoPrices[pQty-6]);
+       solarId = solarMonoIds[pQty-6];
+       localStorage.setItem('solarPrice', solarPrice);
+       localStorage.setItem('table', energy);
+    } else if (energy == "Tri"){
+        solarPrice = parseFloat(solarTriPrices[pQty-panelMin]);
+        solarId = solarTriIds[pQty-panelMin];
+        localStorage.setItem('solarPrice', solarPrice);
+        localStorage.setItem('table', energy);
+    } else if(energy == "Dontknow"){
+        if(pQty < panelMin){
+            solarPrice = parseFloat(solarMonoPrices[pQty-6]);
+            solarId = solarMonoIds[pQty-6];
+            localStorage.setItem('table', "Mono");
+            localStorage.setItem('solarPrice', solarPrice);
         } else{
-            converterPrice = parseFloat(converterMonoPrices[7]);
-            converterId = converterMonoIds[7];
-        }
-    } else{
-        if (pQty == 18 || pQty == 19 || pQty == 20 || pQty == 21){
-            converterPrice = parseFloat(converterTriPrices[0]);
-            converterId = converterTriIds[0];
-        } else{
-            converterPrice = parseFloat(converterTriPrices[1]);
-            converterId = converterTriIds[1];
+            solarPrice1 = parseFloat(solarMonoPrices[pQty-6]);
+            solarPrice2 = parseFloat(solarTriPrices[pQty-panelMin]);
+            if(solarPrice2 < solarPrice1){
+                solarPrice = solarPrice1;
+                solarId = solarMonoIds[pQty-6];
+                localStorage.setItem('table', "Mono");
+                localStorage.setItem('solarPrice', solarPrice);
+            } else{
+                solarPrice = solarPrice2;
+                solarId = solarTriIds[pQty-panelMin];
+                localStorage.setItem('table', "Tri");
+                localStorage.setItem('solarPrice', solarPrice);
+            }
         }
     }
+
 
     var roofPrice;
     var roofId;
-    if(roof == "Silver"){
-        roofPrice = parseFloat(flatSPrices[pQty-6]);
-        roofId = flatSIds[pQty-6];
-    } else if(roof == "Black"){
-        roofPrice = parseFloat(flatBPrices[(pQty-6)/2]);
-        roofId = flatSIds[pQty-6];
-    } else{
+    if( roof == "Flat"){
+        if(roofDir == "South"){
+            if(roofColor == "Silver"){
+                roofPrice = parseFloat(flatSSPrices[pQty-6]);
+                roofId = flatSSIds[pQty-6];
+                localStorage.setItem('roofPrice', roofPrice);
+            } else if (roofColor == "Black"){
+                roofPrice = parseFloat(flatSBPrices[pQty-6]);
+                roofId = flatSBIds[pQty-6];
+                localStorage.setItem('roofPrice', roofPrice);
+            }
+        } else if(roofDir == "East-West"){
+            if(roofColor == "Silver"){
+                roofPrice = parseFloat(flatEWSPrices[(pQty-6)/2]);
+                roofId = flatEWSIds[(pQty-6)/2];
+                localStorage.setItem('roofPrice', roofPrice);
+            } else if (roofColor == "Black"){
+                roofPrice = parseFloat(flatEWBPrices[(pQty-6)/2]);
+                roofId = flatEWBIds[(pQty-6)/2];
+                localStorage.setItem('roofPrice', roofPrice);
+            }
+        }
+    } else if (roof == "Inclined"){
         roofPrice = parseFloat(inclinedPrices[pQty-6]);        
-        roofId = inclinedIds[pQty-6];        
+        roofId = inclinedIds[pQty-6];
+        localStorage.setItem('roofPrice', roofPrice);
     }
 
+
+/*****************************FULL INSTALLATION FALTAN PRECIOS PARA BETTER Y BEST PACKAGES **************************************/
+
     var installPrice;
+    var installPrice2;
     var installId;
+    var table = localStorage.getItem('table');        
     if(install == "Own"){
         installPrice = parseFloat(ownPrices[pQty - 6]);
         installId = ownIds[pQty - 6];
+        localStorage.setItem('installPrice', installPrice);        
     }else if(install == "Electrician"){
-        installPrice = parseFloat(electricianPrice);
-        installId = electricianId;
-    }else if(install == "Full Installed" && energy == "Mono"){
+        installPrice = parseFloat(ownPrices[pQty - 6]);
+        installId = ownIds[pQty - 6];
+        installPrice2 = parseFloat(electricianPrice);
+        installId2 = electricianId;
+        localStorage.setItem('installPrice', installPrice);
+        localStorage.setItem('installPrice2', installPrice2);  
+    }else if(install == "Full Installed" && table == "Mono"){
         installPrice = parseFloat(fullMonoPrices[pQty - 6]);
-        installId = fullMonoIds[pQty - 18];
-    }else if(install == "Full Installed" && energy == "Tri"){
-        installPrice = parseFloat(fullTriPrices[pQty - 18]);    
-        installId = fullTriIds[pQty - 18];    
+        installId = fullMonoIds[pQty - 6];
+        localStorage.setItem('installPrice', installPrice);
+    }else if(install == "Full Installed" && table == "Tri"){
+        installPrice = parseFloat(fullTriPrices[pQty - panelMin]);    
+        installId = fullTriIds[pQty - panelMin];    
+        localStorage.setItem('installPrice', installPrice);
     }
 
 
-    var price = solarPrice+clampPrice+converterPrice+optimizerPrice+roofPrice+installPrice;
-    var ids = solarId+', '+optimizerId+', '+clampId+', '+converterId+', '+roofId+', '+installId;
-    price = price.toFixed(2);
-    priceBox.textContent = "Subtotal: €" + price;
+    if(installPrice2){
+        var price = solarPrice+roofPrice+installPrice+installPrice2;
+        var ids = solarId+', '+roofId+', '+installId+', '+installId2;
+  
+    } else {
+        var price = solarPrice+roofPrice+installPrice;
+        var ids = solarId+', '+roofId+', '+installId;
+    }
+ 
+    if(roof && energy && install && pQty){
+
+        var branch = document.createElement('BR');
+        var priceText = document.createElement('P');
+        var taxText = document.createElement('P');
+        var totalText = document.createElement('P');
+        price = price.toFixed(2);
+        var tax = price*0.21;
+        tax = tax.toFixed(2);
+        var total = parseFloat(price) + parseFloat(tax);
+        total = total.toFixed(2);
+        while (priceBox.childNodes.length > 0) {
+			priceBox.removeChild(priceBox.lastChild);
+		}
+        priceText.textContent = "Subtotal: €" + price + " exc. BTW";
+        taxText.textContent += "BTW: €" + tax;
+        totalText.textContent += "Total: €" + total + " inc. BTW";
+        priceBox.appendChild(priceText);
+        priceBox.appendChild(taxText);
+        priceBox.appendChild(totalText);
+    }
+
     var data = {
-    pQty:  pQty,
-    ids: ids,
-  };
+        pQty:  pQty,
+        ids: ids,
+    };
     return data;
 }
 </script>

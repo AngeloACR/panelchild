@@ -1,32 +1,21 @@
 <?php 
 /* Template Name:showDocuments */
 
-/***********************EXPLODE WITH .PDF **************************/
-
-
 global $product;
-$att = $product->get_attribute('documentation');
-//$docs = explode (",", $att);
+$att = $product->get_attribute('documentatie');
 $docs = explode (".pdf", $att);
 
 ?>
 
-<!-- <ul id="list" class="docs">
-<?php /*foreach ($docs as $doc) { ?>
-	<li class="doc">
-		<a href=<?php echo $doc; ?> class="docName">
-			<?php echo $doc; ?>			
-		</a>	
-	</li>
-<?php } */?>
-</ul> -->
-
-<ul id="list" class="docs">
+<ul id="docsList" class="myDocs">
 <?php foreach ($docs as $doc) { ?>
 	<?php $pdfDoc = $doc.".pdf" ?>
-	<li class="doc">
-		<a href=<?php echo $pdfDoc; ?> class="docName">
-			<?php echo $doc; ?>			
+	<li class="myDoc">
+		<a href=<?php echo $pdfDoc; ?> class="myDocName">
+			<?php 
+			$url = basename($doc);
+			echo  str_replace('%20', ' ', $url);
+			?>
 		</a>	
 	</li>
 <?php } ?>
@@ -34,14 +23,14 @@ $docs = explode (".pdf", $att);
 
 <style>	 
 
-.doc{
+.myDoc{
 	margin-left: 0 !important;
 	margin-bottom: 4px;
 	margin-top: 4px;
 	padding: 0;	
 }
 
-.docs{
+.myDocs{
 	overflow: hidden;
 	list-style-type: none;
 	-webkit-transition: max-height 0.2s ease-in-out;

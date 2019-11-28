@@ -1,5 +1,5 @@
 <?php 
-/* Template Name:showDocuments */
+/* Template Name:wattsDisp */
 
 global $product;
 preg_match_all('~>\K[^<>]*(?=<)~', $product->get_categories(), $pCats);

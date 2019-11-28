@@ -35,13 +35,6 @@ function roofButts() {
 } 
 add_shortcode( 'product-roof', 'roofButts' );
 
-function infoDisp() {
-    ob_start();
-    get_template_part('infoDisp');
-    return ob_get_clean();   
-} 
-add_shortcode( 'product-info', 'infoDisp' );
-
 function showProducts() {
     ob_start();
     get_template_part('showProducts');
@@ -55,3 +48,24 @@ function addToCart() {
     return ob_get_clean();   
 } 
 add_shortcode( 'product-cart', 'addToCart' );
+
+function qtyButt() {
+    ob_start();
+    get_template_part('qtyButt');
+    return ob_get_clean();   
+} 
+add_shortcode( 'product-qty', 'qtyButt' );
+
+function panelHeader() {
+    ob_start();
+    get_template_part('panelHeader');
+    return ob_get_clean();   
+} 
+add_shortcode( 'product-header', 'panelHeader' );
+
+function panelPeople() {
+    ob_start();
+    get_template_part('panelPeople');
+    return ob_get_clean();   
+} 
+add_shortcode( 'product-people', 'panelPeople' );
